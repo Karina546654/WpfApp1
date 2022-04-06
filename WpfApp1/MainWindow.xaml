@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window" Width="600" Height="450">
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="File" IsTabStop="False" >
+                    <MenuItem Click="Open" Header="Open" ></MenuItem>
+                    <MenuItem Click="New"  Header="New"></MenuItem>
+                    <MenuItem Click="SaveFile"  Header="Save"></MenuItem>
+                    <MenuItem Click="DeleteFile" Header="Delete"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Sample" IsTabStop="False">
+                    <MenuItem Click="Create_Sample" Header="Sample"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="About" IsTabStop="False">
+                    <MenuItem Click="About_program" Header="About"></MenuItem>
+                    <MenuItem Click="About_authors" Header="About authors"></MenuItem>
+
+                </MenuItem>
+            </Menu>
+            <WrapPanel>
+                <Button Click="Kursiv" x:Name="kursiv" >
+                    <Image Source="/ico/italic.png" Height="25"/>
+                </Button>
+                <Button Click="Bold_" x:Name="poluzirniy">
+                    <Image Source="/Resources/bold_format_editor_tool_icon_146015.png"  Height="25"/>
+                </Button>
+                <Button Click="Podcherk_" x:Name="podcherknutiy">
+                    <Image Source="/Resources/underline_format_editor_tool_icon_145920.png" Height="25" />
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+        <StatusBar DockPanel.Dock="Bottom" >
+            <TextBlock x:Name="LeftText"></TextBlock>
+                <StatusBarItem Grid.Column="1">
+                <TextBlock x:Name="RightText"></TextBlock>
+                </StatusBarItem>
+        </StatusBar>
+        <ListBox x:Name="list_files" DockPanel.Dock="Left" Width="200"></ListBox>
+        <TextBox x:Name="txtbox"  SpellCheck.IsEnabled="True" Language="ru-ru" KeyDown="TextKeyDownEvent" />
+    </DockPanel>
+
+</Window>
